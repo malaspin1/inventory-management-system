@@ -1,96 +1,76 @@
 <!doctype html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vendas</title>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-  />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header id="topo">
-    <ul id="topo-lista">
-      <li class="topo-link"><a href="#" class="link" onclick="historicodevendas()">Histórico de Vendas</a></li>
-      <li class="topo-link"><a href="#" class="link" onclick="gerenciarvendas()">Gerenciar Vendas</a></li>
-    </ul>
-  </header>
-
-  <main id="main">
-    <section id="addvenda">
-      <h1>Adicionar Venda</h1>
-
-      <!-- Filtros -->
-      <select id="categoria">
-        <option value="">Todas Categorias</option>
-        <option value="racao-cao">Ração para Cães</option>
-        <option value="racao-gato">Ração para Gatos</option>
-        <option value="racao-ave">Ração para Aves</option>
-      </select>
-
-      <select id="marca">
-        <option value="">Todas Marcas</option>
-        <option class="racao-cao" value="specialdog">Special Dog</option>
-        <option class="racao-cao" value="premier">Premier</option>
-        <option class="racao-gato" value="specialcat">Special Cat</option>
-        <option class="racao-cao" value="luckdog">Luck Dog</option>
-        <option class="racao-gato" value="luckcat">Luck Cat</option>
-      </select>
-
-      <select id="peso">
-        <option value="">Todos Pesos</option>
-        <option value="kg">Kg a Granel</option>
-        <option value="10">Saco de 10kg</option>
-        <option value="15">Saco de 15kg</option>
-        <option value="20">Saco de 20kg</option>
-        <option value="pesofixo">Peso Fixo</option>
-      </select>
-
-      <!-- Pesquisa -->
-      <div id="pesquisa">
-        <i id="iconsearch" class="fa-solid fa-magnifying-glass"></i>
-        <input id="product-name" type="text" placeholder="Insira o nome do produto" />
-      </div>
-
-      <!-- Produtos -->
-      <div id="lista-produtos">
-        <div class="produto racao-cao specialdog kg">
-          <h4 class="nome-produto">Special Dog Adulto (kg)</h4>
-          <img class="foto-produto" src="src/01.jpg" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vendas</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="topo">
+      <ul id="topo-lista">
+        <li class="topo-link">
+          <a href="#" class="link" onclick="historicodevendas()"
+            >Histórico de Vendas</a
+          >
+        </li>
+        <li class="topo-link">
+          <a href="#" class="link" onclick="gerenciarvendas()"
+            >Gerenciar Vendas</a
+          >
+        </li>
+      </ul>
+    </header>
+    <main id="main">
+      <section id="addvenda">
+        <h1>Adicionar Venda</h1>
+        <!-- Filtros -->
+        <select id="categoria">
+          <option value="">Todas Categorias</option>
+          <option value="racao-cao">Ração para Cães</option>
+          <option value="racao-gato">Ração para Gatos</option>
+          <option value="racao-ave">Ração para Aves</option>
+          <option value="produto-gato">Produtos p/ Gatos</option>
+          <option value="inseticidas">Inseticidas</option>
+        </select>
+        <select id="marca">
+          <option value="">Todas Marcas</option>
+          <option class="racao-cao" value="specialdog">Special Dog</option>
+          <option class="racao-cao" value="premier">Premier</option>
+          <option class="racao-gato" value="specialcat">Special Cat</option>
+          <option class="racao-cao" value="luckdog">Luck Dog</option>
+          <option class="racao-gato" value="luckcat">Luck Cat</option>
+        </select>
+        <select id="peso">
+          <option value="">Todos Pesos</option>
+          <option value="kg">Kg a Granel</option>
+          <option value="10">Saco de 10kg</option>
+          <option value="15">Saco de 15kg</option>
+          <option value="20">Saco de 20kg</option>
+          <option value="pesofixo">Peso Fixo</option>
+        </select>
+        <!-- Pesquisa -->
+        <div id="pesquisa">
+          <i id="iconsearch" class="fa-solid fa-magnifying-glass"></i>
+          <input
+            id="product-name"
+            type="text"
+            placeholder="Insira o nome do produto"
+          />
         </div>
-        <div class="produto racao-cao specialdog 15">
-          <h4 class="nome-produto">Special Dog Adulto (15kg)</h4>
-          <img class="foto-produto" src="src/01.jpg" />
-        </div>
-        <div class="produto racao-cao specialdog kg">
-          <h4 class="nome-produto">Special Dog Junior (kg)</h4>
-          <img class="foto-produto" src="src/02.jpg" />
-        </div>
-        <div class="produto racao-cao specialdog 15">
-          <h4 class="nome-produto">Special Dog Junior (15kg)</h4>
-          <img class="foto-produto" src="src/02.jpg" />
-        </div>
-      </div>
-
-      <!-- Mensagem Erro -->
-      <div id="sem-produtos">Nenhum produto encontrado.</div>
-
-      <div id="products">
-        <h1>Produtos Adicionados</h2>
-            <div class="produto-adicionado">
-
-                <img class="foto-produto" src="src/01.jpg"/>
-                <div class="info-produtos">
-                    <h4>Special Dog (kg)</h4>
-                    <h4>Valor:</h4>
-                </div>
-            </div>
-      </div>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
-</body>
+        <!-- Produtos -->
+        <div id="lista-produtos"></div>
+        <!-- Mensagem Erro -->
+        <div id="sem-produtos">Nenhum produto encontrado.</div>
+        <div id="products"><h1>Produtos Adicionados</h1>
+        <h2>Valor Final: </h2></div>
+        <button>Limpar</button>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
 </html>

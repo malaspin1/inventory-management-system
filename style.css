@@ -60,7 +60,8 @@ body {
   border-radius: 10px;
 }
 
-select, #product-name {
+select,
+#product-name {
   padding: 5px;
   margin: 5px;
   border-radius: 10px;
@@ -93,9 +94,9 @@ select, #product-name {
 
 #lista-produtos {
   display: flex;
-  flex-wrap: wrap;
   gap: 15px;
   margin-top: 10px;
+  overflow: hidden;
 }
 
 .produto {
@@ -106,7 +107,11 @@ select, #product-name {
   padding: 10px;
   text-align: center;
   cursor: pointer;
-  display: none; /* escondido por padrão, JS controla */
+  display: none;
+}
+
+.produto > h4 {
+  height: 100px;
 }
 
 .produto img {
@@ -121,4 +126,68 @@ select, #product-name {
   font-weight: bold;
   margin-top: 15px;
   display: none;
+}
+
+.produto-adicionado {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.foto-produto {
+  border-radius: 20px;
+}
+
+.info-produtos {
+  height: 180px;
+}
+
+.numup,
+.numdown {
+  width: 20px;
+  background-color: transparent;
+  border: none;
+  display: inline;
+}
+.numup > i,
+.numdown > i {
+  filter: invert();
+}
+
+.numup:hover,
+.numdown:hover {
+  cursor: pointer;
+}
+
+.numinfo {
+  display: inline;
+  background-color: transparent;
+  color: white;
+  border: 0;
+  width: 100px;
+  text-align: center;
+}
+
+.remove-item {
+  margin-top: 20px;
+  background-color: transparent;
+  border: 0;
+  display: inline-block;
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.remove-item > i {
+  filter: invert();
+}
+
+.remove-title {
+  display: inline-block;
+  color: white;
+}
+
+.remove-item:hover{
+  cursor: pointer;
 }
