@@ -1,0 +1,12 @@
+[
+  { 
+    "codigo": "1101",
+    "nome": "Special Dog Adulto",
+    "preco": 9.90
+  },
+  {
+    "codigo": "1102",
+    "nome": "Special Dog Junior",
+    "preco": 10.90
+  }
+]
